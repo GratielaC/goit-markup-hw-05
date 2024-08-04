@@ -252,27 +252,38 @@ ul {
   padding: 20px;
 }
 
-/* Close button */
 .btn-close-modal {
-width: 24px;
-height: 24px;
-right: 10px;
-gap: 0px;
-border: 1px solid #0000001A;
-opacity: 0px;
-position: absolute;
-background:#E7E9FC;
-cursor: pointer;
+  position: absolute;
+  top: 24px; /* 24px from the top of the container */
+  left: 360px; /* 24px from the left of the container */
+  right: 24px; /* The right margin is indirectly set by using the left margin in combination with the container's width */
+  width: 24px;
+  height: 24px;
+  border-radius: 4px 0px 0px 0px;
+  background: #E7E9FC;
+  border: 1px solid #0000001A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* SVG icon inside the close button */
+.btn-close-modal svg {
+  width: 8px;
+  height: 8px;
+  fill: #2E2F42;
 }
 
 /* Styling for form elements */
 .modal h2 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-size: 1.5em;
   width: 360px;
   height: 24px;
-  top: 152px;
-  left: 540px;
+  top: 24px;
+  left: 24px;
+  right: 24px;
   gap: 0px;
   opacity: 0px;
   font-family: Roboto;
@@ -311,31 +322,93 @@ cursor: pointer;
 }
 
 .modal button[type="submit"] {
-width: Hug (169px)px;
-height: Hug (56px)px;
-top: 584px;
-left: 635px;
-padding: 16px 32px 16px 32px;
-gap: 10px;
-border-radius: 4px 0px 0px 0px;
-opacity: 0px;
-box-shadow: 0px 4px 4px 0px #00000026;
-background: #4D5AE5;
-border: none;
-align-items: center;
-font-family: Roboto;
-font-size: 16px;
-font-weight: 500;
-line-height: 24px;
-letter-spacing: 0.04em;
-text-align: center;
-color: #fff;
-cursor: pointer;
+  width: 169px; 
+  height: 56px; 
+  margin: 0 auto; 
+  display: block; 
+  padding: 16px 32px; 
+  border-radius: 4px 0px 0px 0px; 
+  box-shadow: 0px 4px 4px 0px #00000026;
+  background: #4D5AE5; 
+  border: none; 
+  font-family: Roboto;
+  font-size: 16px; 
+  font-weight: 500; 
+  line-height: 24px; 
+  letter-spacing: 0.04em; 
+  text-align: center; 
+  color: #fff; 
+  cursor: pointer; 
 }
 
 /* Display modal and backdrop */
 .backdrop.is-open {
   display: flex; /* B7: Show modal with class is-open */
+}
+
+/* Hide original checkbox */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* Style label and custom checkbox */
+.custom-checkbox label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-checkbox .checkbox-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label .checkbox-icon {
+  background-color: #4D5AE5; /* Checked background color */
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label .checkbox-icon svg {
+  display: block; /* Show SVG icon when checked */
+}
+
+.custom-checkbox .checkbox-icon svg {
+  display: none; /* Hide by default */
+  fill: #fff; /* Icon color */
+}
+
+/* General transition for elements */
+input, textarea, button, .checkbox-icon {
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.newsletter input[type="email"]:focus,
+.modal input:focus,
+.modal textarea:focus {
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.newsletter input[type="email"]:focus + svg,
+.modal input:focus + svg,
+.modal textarea:focus + svg {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.privacy-policy-link {
+  color: blue; /* Set the text color to blue */
+  text-decoration: underline; /* Add underline to make it look like a link */
+  cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
+}
+
+.privacy-policy-link:hover {
+  color: darkblue; /* Optional: change color on hover */
 }
 
 .concept {
@@ -524,3 +597,92 @@ body .footer-desc {
 .soc-link-block {
 }
 
+
+/* Newsletter section */
+.newsletter {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Newsletter header */
+.newsletter-header {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF; /* White text color */
+  margin-bottom: 20px; /* Space below the header */
+  margin: 0;
+  }
+
+
+/* Newsletter form */
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; /* Space between elements */
+}
+
+/* Input field styling */
+.newsletter input[type="email"] {
+  width: 300px;
+  height: 40px;
+  padding: 8px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  border-radius: 4px 0 0 0; /* Border radius */
+  border: 1px solid #ddd;
+  outline: none;
+  background: #2E2F42;
+}
+
+/* Submit button styling */
+.newsletter button[type="submit"] {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  padding: 8px 24px;
+  border-radius: 4px 0 0 0;
+  background: #4D5AE5; /* Button background color */
+  color: #FFFFFF; /* Button text color */
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+/* Icon inside button */
+.newsletter button[type="submit"] svg {
+  width: 24px;
+  height: 20px;
+  fill: #FFFFFF; /* Icon color */
+}
+
+/* Focus state for inputs */
+.newsletter input[type="email"]:focus,
+.modal input:focus,
+.modal textarea:focus {
+  border-color: #4D5AE5; /* Desired color on focus */
+  outline: none;
+}
+
+.newsletter input[type="email"]:focus + svg,
+.modal input:focus + svg,
+.modal textarea:focus + svg {
+  fill: #4D5AE5; /* Change icon color on focus */
+}
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

@@ -548,12 +548,25 @@
         </div>
       </div>
 
-    
-
+      <section class="newsletter">
+        <div class="container">
+          <h2 class="newsletter-header">Subscribe</h2>
+          <form action="#" method="POST">
+            <label for="email" class="visually-hidden">Email</label>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <button type="submit">
+              <svg width="24" height="20">
+                <use href="./images/icons.svg#icon-papper"></use>
+              </svg>
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>    
     </footer>
 
-   <!-- Order Service Button -->
-<button id="orderServiceBtn">Order Service</button>
+<!-- Hidden Order Service Button -->
+<button type="button" class="orders-button visually-hidden" id="orderServiceBtn">Order Service</button>
 
 <!-- Contact Form Modal -->
 <div id="backdrop" class="backdrop">
@@ -565,33 +578,51 @@
     </button>
     <h2>Leave your contacts and we will call you back</h2>
     <form>
+      <label>
+        Name
       <div class="input-group">
-        <input type="text" placeholder="Name" required>
+        <input type="text" name="name" required>
         <svg width="12" height="12">
           <use href="./images/icons.svg#icon-person" />
         </svg>
       </div>
+    </label>
+    <label>
+      Phone
       <div class="input-group">
-        <input type="tel" placeholder="Phone" required>
+        <input type="tel" name="phone" required>
         <svg width="13" height="13">
           <use href="./images/icons.svg#icon-phone" />
         </svg>
       </div>
+    </label>
+    <label>
+      Email
       <div class="input-group">
-        <input type="email" placeholder="Email" required>
+        <input type="email" name="email" required>
         <svg width="15" height="12">
           <use href="./images/icons.svg#icon-email" />
         </svg>
       </div>
-      <textarea placeholder="Comment" required></textarea>
-      <div>
-        <input type="checkbox" id="agree" required>
-        <label for="agree">I agree to the terms and conditions of the Privacy Policy</label>
-      </div>
-      <button type="submit">Send</button>
-    </form>
-  </div>
-</div>
+    </label>
+    <label>
+      Comment
+      <textarea placeholder="Text input" required></textarea>
+    </label>
+    <div class="custom-checkbox">
+      <input type="checkbox" name="checkbox" id="agree" required>
+      <label for="agree">
+        <span class="checkbox-icon">
+          <svg width="16" height="16">
+            <use href="./images/icons.svg#icon-checkmark"></use>
+          </svg>
+        </span>
+        I agree to the terms and conditions of the 
+        <a href="#" class="privacy-policy-link">Privacy Policy</a>
+      </label>
+    </div>
+    <button type="submit">Send</button>
+    
 
 
     <script src="./index.js"></script>
