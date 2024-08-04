@@ -30,6 +30,7 @@ ul {
   padding: 0 15px;
   margin: 0 auto;
 }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -73,12 +74,11 @@ ul {
 }
 .contacts-us {
   align-items: flex-end;
+  font-style: normal;
 }
 .top-menu {
   display: flex;
   gap: 40px;
-}
-.top-menu-item {
 }
 
 .logo-footer-part {
@@ -104,12 +104,10 @@ ul {
 .link:hover,
 .link:focus,
 .contacts-us .link:hover,
-.contacts-us .link:focus,
-.active {
+.contacts-us .link:focus {
   color: #404bbf;
 }
-.top-menu-item .link:hover::after,
-.active::after {
+.top-menu-item .link:hover::after {
   content: "";
   height: 4px;
   width: 100%;
@@ -120,9 +118,7 @@ ul {
   left: 0;
   bottom: -1px;
 }
-.contacts-us {
-  font-style: normal;
-}
+
 .contacts-us .link {
   color: #434455;
   font-weight: 400;
@@ -184,7 +180,12 @@ ul {
 }
 .orders {
   background-color: #2e2f42;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office.jpg);
+  background: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/background-section1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -192,6 +193,7 @@ ul {
   text-align: center;
   max-width: 1440px;
   padding: 188px 0;
+  margin: auto;
 }
 .orders-header {
   color: #fff;
@@ -226,191 +228,6 @@ ul {
   background-color: #404bbf;
   cursor: pointer;
 }
-
-/* Backdrop styling */
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #2E2F4266;
-  display: none; /* B6: Initially hidden */
-  align-items: center; /* B4: Center vertically */
-  justify-content: center; /* B4: Center horizontally */
-  z-index: 1000;
-}
-
-/* Modal styling */
-.modal {
-  width: 408px;
-  height: 584px;
-  background: #FCFCFC;
-  box-shadow: 0px 1px 1px 0px #00000024, 0px 1px 3px 0px #0000001F, 0px 2px 1px 0px #00000033;
-  border-radius: 4px 0px 0px 0px;
-  position: relative;
-  padding: 20px;
-}
-
-.btn-close-modal {
-  position: absolute;
-  top: 24px; /* 24px from the top of the container */
-  left: 360px; /* 24px from the left of the container */
-  right: 24px; /* The right margin is indirectly set by using the left margin in combination with the container's width */
-  width: 24px;
-  height: 24px;
-  border-radius: 4px 0px 0px 0px;
-  background: #E7E9FC;
-  border: 1px solid #0000001A;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-/* SVG icon inside the close button */
-.btn-close-modal svg {
-  width: 8px;
-  height: 8px;
-  fill: #2E2F42;
-}
-
-/* Styling for form elements */
-.modal h2 {
-  margin-bottom: 16px;
-  font-size: 1.5em;
-  width: 360px;
-  height: 24px;
-  top: 24px;
-  left: 24px;
-  right: 24px;
-  gap: 0px;
-  opacity: 0px;
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.02em;
-  text-align: center;
-  color: #2E2F42;
-}
-
-.modal .input-group {
-  position: relative;
-  margin-bottom: 15px;
-}
-
-.modal .input-group input,
-.modal textarea {
-  width: 100%;
-  padding: 10px;
-  padding-left: 35px; /* Space for icon */
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1em;
-}
-
-.modal .input-group svg {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.modal textarea {
-  height: 100px;
-}
-
-.modal button[type="submit"] {
-  width: 169px; 
-  height: 56px; 
-  margin: 0 auto; 
-  display: block; 
-  padding: 16px 32px; 
-  border-radius: 4px 0px 0px 0px; 
-  box-shadow: 0px 4px 4px 0px #00000026;
-  background: #4D5AE5; 
-  border: none; 
-  font-family: Roboto;
-  font-size: 16px; 
-  font-weight: 500; 
-  line-height: 24px; 
-  letter-spacing: 0.04em; 
-  text-align: center; 
-  color: #fff; 
-  cursor: pointer; 
-}
-
-/* Display modal and backdrop */
-.backdrop.is-open {
-  display: flex; /* B7: Show modal with class is-open */
-}
-
-/* Hide original checkbox */
-.custom-checkbox input[type="checkbox"] {
-  display: none;
-}
-
-/* Style label and custom checkbox */
-.custom-checkbox label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.custom-checkbox .checkbox-icon {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.custom-checkbox input[type="checkbox"]:checked + label .checkbox-icon {
-  background-color: #4D5AE5; /* Checked background color */
-}
-
-.custom-checkbox input[type="checkbox"]:checked + label .checkbox-icon svg {
-  display: block; /* Show SVG icon when checked */
-}
-
-.custom-checkbox .checkbox-icon svg {
-  display: none; /* Hide by default */
-  fill: #fff; /* Icon color */
-}
-
-/* General transition for elements */
-input, textarea, button, .checkbox-icon {
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.newsletter input[type="email"]:focus,
-.modal input:focus,
-.modal textarea:focus {
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.newsletter input[type="email"]:focus + svg,
-.modal input:focus + svg,
-.modal textarea:focus + svg {
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.privacy-policy-link {
-  color: blue; /* Set the text color to blue */
-  text-decoration: underline; /* Add underline to make it look like a link */
-  cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
-}
-
-.privacy-policy-link:hover {
-  color: darkblue; /* Optional: change color on hover */
-}
-
 .concept {
   padding: 120px 0;
 }
@@ -546,6 +363,7 @@ input, textarea, button, .checkbox-icon {
 }
 .portfolio-item:hover .overlay {
   transform: translateY(0);
+  cursor: pointer;
 }
 .social-links .soc-link:hover,
 .social-links .soc-link:focus {
@@ -579,6 +397,8 @@ body .footer-desc {
   letter-spacing: 0.02em;
   font-weight: 500;
   margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 .footer-text-block {
   margin-right: 120px;
@@ -597,92 +417,309 @@ body .footer-desc {
 .soc-link-block {
 }
 
-
-/* Newsletter section */
-.newsletter {
-  display: flex;
-  flex-direction: column;
+.footer-address {
+  width: 453px;
+  height: 80px;
+  padding-left: 80px;
 }
 
-/* Newsletter header */
-.newsletter-header {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
+.footer-form {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-input {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 264px;
+  height: 40px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
+  color: #fff;
+}
+
+.footer-input::placeholder {
+  color: #fff;
+}
+
+.footer-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 24px;
+  min-width: 165px;
+  height: 40px;
+  background-color: #4d5ae5;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.02em;
-  color: #FFFFFF; /* White text color */
-  margin-bottom: 20px; /* Space below the header */
-  margin: 0;
-  }
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.footer-button:hover,
+.footer-button:focus {
+  background-color: #404bbf;
+}
 
-/* Newsletter form */
-.newsletter form {
+.icon-footer {
+  fill: #fff;
+  margin-left: 16px;
+}
+
+/* modal*/
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(46, 47, 66, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  width: 408px;
+  min-height: 584px;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fcfcfc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
+}
+
+.modal-close:focus .icon-close,
+.modal-close:hover .icon-close{
+  fill: #ffffff;
+}
+
+.modal-close:hover,
+.modal-close:focus{
+  background-color: #404bbf;
+  border: none;
+}
+
+.backdrop:not(.is-open) .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.modal-close {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px; /* Space between elements */
-}
-
-/* Input field styling */
-.newsletter input[type="email"] {
-  width: 300px;
-  height: 40px;
-  padding: 8px;
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  border-radius: 4px 0 0 0; /* Border radius */
-  border: 1px solid #ddd;
-  outline: none;
-  background: #2E2F42;
-}
-
-/* Submit button styling */
-.newsletter button[type="submit"] {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Space between icon and text */
-  padding: 8px 24px;
-  border-radius: 4px 0 0 0;
-  background: #4D5AE5; /* Button background color */
-  color: #FFFFFF; /* Button text color */
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-}
-
-/* Icon inside button */
-.newsletter button[type="submit"] svg {
+  top: 24px;
+  right: 24px;
   width: 24px;
-  height: 20px;
-  fill: #FFFFFF; /* Icon color */
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #e7e9fc;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Focus state for inputs */
-.newsletter input[type="email"]:focus,
-.modal input:focus,
-.modal textarea:focus {
-  border-color: #4D5AE5; /* Desired color on focus */
+.icon-close {
+  fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+  margin-bottom: 16px;
+}
+
+.form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 4px;
+  width: 360px;
+  height: 336px;
+}
+
+.form-element {
+  margin-bottom: 8px;
+}
+
+.comment {
+  margin-bottom: 16px;
+}
+.form-label {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 4px;
+}
+
+.form-input {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  outline: transparent;
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding-left: 38px;
+}
+
+.input-and-icon {
+  position: relative;
+}
+
+.form-input:hover,
+.form-input:focus {
+  border-color: #4d5ae5;
   outline: none;
 }
 
-.newsletter input[type="email"]:focus + svg,
-.modal input:focus + svg,
-.modal textarea:focus + svg {
-  fill: #4D5AE5; /* Change icon color on focus */
+.form-input:hover + .input-icon,
+.form-input:focus + .input-icon {
+  fill: #4d5ae5;
 }
 
-
-.visually-hidden {
+.input-icon {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 4px;
+  width: 18px;
+  height: 24px;
+  top: 50%;
+  left: 16px;
+  fill: #2e2f42;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-area {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  color: rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  width: 360px;
+  height: 120px;
+  resize: none;
+  outline: none;
+  padding: 8px 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-area:hover,
+.input-area:focus {
+  border-color: #4d5ae5;
+}
+
+.input-area::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.checkbox {
+  margin-bottom: 24px;
+}
+
+.modal-check-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  align-items: center;
+}
+
+.check-privacy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 8px;
+}
+
+.modal-check:checked + .modal-check-text span {
+  background-color: #404bbf;
+  fill: #f4f4fd;
+  border: none;
+}
+
+.privacy-policy {
+  line-height: 1.33333;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
+}
+
+.button-send {
+  display: block;
+  gap: 10px;
+  border-radius: 4px;
+  min-width: 169px;
+  height: 56px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background: #4d5ae5;
+  border: none;
+  margin: 0 auto;
+  padding: 16px 32px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-send:hover,
+.button-send:focus {
+  background-color: #404bbf;
 }
