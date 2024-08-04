@@ -59,13 +59,13 @@
       </div>
     </header>
     <main>
-      <!-- first-section -->
-      <section class="orders">
-        <div class="container">
-          <h1 class="orders-header">Effective Solutions for Your Business</h1>
-          <button type="button" class="orders-button">Order Service</button>
-        </div>
-      </section>
+     <!-- first-section -->
+<section class="orders">
+  <div class="container">
+    <h1 class="orders-header">Effective Solutions for Your Business</h1>
+    <button type="button" class="orders-button btn-modal" id="orderServiceBtn">Order Service</button>
+  </div>
+</section>
       <!-- second-section -->
       <section class="concept">
         <div class="container">
@@ -547,7 +547,54 @@
           </ul>
         </div>
       </div>
+
+    
+
     </footer>
+
+   <!-- Order Service Button -->
+<button id="orderServiceBtn">Order Service</button>
+
+<!-- Contact Form Modal -->
+<div id="backdrop" class="backdrop">
+  <div id="contactModal" class="modal">
+    <button type="button" class="btn-close-modal">
+      <svg width="16" height="16">
+        <use href="./images/icons.svg#icon-close" />
+      </svg>
+    </button>
+    <h2>Leave your contacts and we will call you back</h2>
+    <form>
+      <div class="input-group">
+        <input type="text" placeholder="Name" required>
+        <svg width="12" height="12">
+          <use href="./images/icons.svg#icon-person" />
+        </svg>
+      </div>
+      <div class="input-group">
+        <input type="tel" placeholder="Phone" required>
+        <svg width="13" height="13">
+          <use href="./images/icons.svg#icon-phone" />
+        </svg>
+      </div>
+      <div class="input-group">
+        <input type="email" placeholder="Email" required>
+        <svg width="15" height="12">
+          <use href="./images/icons.svg#icon-email" />
+        </svg>
+      </div>
+      <textarea placeholder="Comment" required></textarea>
+      <div>
+        <input type="checkbox" id="agree" required>
+        <label for="agree">I agree to the terms and conditions of the Privacy Policy</label>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+
+    <script src="./index.js"></script>
   </body>
 </html>
 
